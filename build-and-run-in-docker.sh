@@ -8,7 +8,8 @@ echo "#-#-#-#-#-# Build complete, run it:"
 echo "#-#-#-#-#-#"
 echo ""
 
-docker run --rm -i -t $(docker image ls --quiet | head -1) env NODE_LIBXL_PATH=./ node demo
+# Although this uses LD_LIBRARY_PATH I've also tried to add the dir to /etc/ld.so.conf.d/ and running ldconfig to detect it (verified it is found and of the expected type via ldconfig -p)
+docker run --rm -i -t $(docker image ls --quiet | head -1) env LD_LIBRARY_PATH="./node_modules/libxl/deps/libxl/lib64/" NODE_LIBXL_PATH=./ node demo
 
 echo ""
 echo "#-#-#-#-#-#"
