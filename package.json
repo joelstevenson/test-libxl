@@ -1,0 +1,12 @@
+{
+  "name": "test-libxl",
+  "version": "1.0.0",
+  "engines": {
+    "node": "v22.12.0"
+  },
+  "description": "Test Libxl build failure",
+  "main": "index.js",
+  "dependencies": {
+    "libxl": "^0.6.0"
+  }
+}
